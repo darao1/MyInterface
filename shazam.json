@@ -1,0 +1,14 @@
+import requests
+
+url = "https://shazam.p.rapidapi.com/search"
+
+querystring = {"term":"kiss the rain","locale":"en-US","offset":"0","limit":"5"}
+
+headers = {
+	"X-RapidAPI-Key": "5cc5b2dd50msheb100122c1a75c2p1d4902jsna8420414ce9b",
+	"X-RapidAPI-Host": "shazam.p.rapidapi.com"
+}
+
+response = requests.request("GET", url, headers=headers, params=querystring)
+
+print(response.text)
